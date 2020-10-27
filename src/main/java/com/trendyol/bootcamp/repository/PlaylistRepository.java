@@ -50,7 +50,7 @@ public class PlaylistRepository {
                 GetResult getResult = playlistCollection.get(id);
                 Playlist playlist = getResult.contentAs(Playlist.class);
                 playlist.addTrack(track);
-                playlist.setTrackCount(playlist.getTrackCount() + 1);
+                playlist.setTrackCount(playlist.getTracks().size());
         }
 
 

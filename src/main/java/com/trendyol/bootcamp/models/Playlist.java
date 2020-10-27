@@ -53,16 +53,6 @@ public class Playlist {
     }
 
     public void deleteTrack(String id) {
-        Track result = null;
-        for (Track track : this.tracks) {
-            if (track.getTrackId().equals(id)) {
-                result = track;
-                break;
-            }
-        }
-        if (result == null) {
-            throw new NotFoundException("Track not found");
-        }
-        tracks.remove(result);
+        this.tracks.removeIf(track -> track.getTrackId().equals("id"));
     }
 }
